@@ -2,14 +2,56 @@
 \chapter{\babSatu}
 \label{bab:1}
 %-----------------------------------------------------------------------------%
-Pada bab ini, akan dijelaskan tentang latar belakang dan permasalahan yang diselesaikan pada penelitian ini.
 
 
 %-----------------------------------------------------------------------------%
 \section{Latar Belakang}
 \label{sec:latarBelakang}
 %-----------------------------------------------------------------------------%
-\noindent\todo{Tentukan latar belakang dari penelitian Anda di sini (\f{background}).}
+Seiring berkembangnya teknologi informasi, pertukaran informasi antar komputer menjadi sebuah permasalahan yang semakin krusial. 
+Setiap orang yang berada di dalam dunia teknologi informasi pasti tidak akan terlepas dengan jaringan komputer, dan pemahaman 
+terhadap jaringan komputer sudah menjadi suatu hal yang diekspektasikan dari siapapun yang bekerja di dunia teknologi informasi. 
+Dalam hal ini, Fakultas Ilmu Komputer telah menyediakan mata kuliah Jaringan Komputer Lanjut untuk mengembangkan pemahaman mahasiswa 
+Fakultas Ilmu Komputer terhadap jaringan komputer dengan lebih dalam. Tentunya, mahasiswa juga perlu memiliki pemahaman yang mendasar 
+terhadap jaringan komputer untuk bisa melaksanakan pembelajaran dalam mata kuliah Jaringan Komputer Lanjut secara efektif. \par
+
+Dari kondisi tersebut, memastikan bahwa setiap mahasiswa memiliki kompetensi yang mencukupi untuk mendalami permasalahan jaringan komputer 
+merupakan sebuah tantangan yang perlu ditangani. Untuk mempermudah proses tersebut, dosen Jaringan Komputer Lanjut dapat memanfaatkan sebuah 
+sistem aplikasi web dimana mahasiswa dapat mengerjakan lab yang menuntut mereka untuk menunjukkan dan mempraktikkan pemahaman mereka 
+terhadap jaringan komputer. Lab dalam sistem ini menghubungkan mahasiswa dengan sebuah mesin virtual yang terhubung kedalam sebuah jaringan 
+virtual, dan setiap perbuatan mahasiswa dalam mesin virtual akan dicek dan dinilai melalui pengecekan log sistem operasi yang terpasang pada 
+mesin virtual tersebut. 
+Tentunya, diperlukan juga sebuah sistem instance dan partisi resource yang memungkinkan sistem untuk digunakan dengan jumlah pengguna yang banyak.
+Setiap mahasiswa yang ingin mengerjakan sebuah lab akan diberikan sebuah instance yang dibuat oleh sistem berdasarkan suatu template yang telah didefinisikan sebelumnya, 
+sehingga setiap lingkungan lab tidak memiliki keterhubungan satu sama lain.
+\par
+
+Untuk mengimplementasi sistem tersebut, aplikasi web yang akan dikembangkan perlu menerapkan sebuah teknik yang bernama Network 
+Virtualization. Network Virtualization merupakan sebuah konsep yang telah berkembang pesat dalam waktu 20 tahun terakhir. Network 
+Virtualization itu sendiri merupakan sebuah konsep atau proses yang memungkinkan absktraksi dari fungsi-fungsi perangkat keras dalam 
+sebuah jaringan komputer kedalam perangkat lunak, sehingga sebuah Virtual Network yang berfungsi layaknya sebuah jaringan komputer 
+tradisional yang menghubungkan lebih dari satu perangkat lunak dapat disimulasikan dan dijalankan dalam satu perangkat keras. 
+\footnote{Carapinha, Jorge, and Javier Jiménez. “Network Virtualization: A View from the Bottom.” Proceedings of the 1st ACM workshop on Virtualized infrastructure systems and architectures (2009). https://doi.org/10.1145/1592648.1592660. }
+\footnote{Tutschku, Kurt, Thomas Zinner, Akihiro Nakao, and Phuoc Tran-Gia. "Network virtualization: Implementation steps towards the future internet." Electronic Communications of the EASST 17 (2009).}
+\footnote{Yi, Bo, Xingwei Wang, Keqin Li, and Min Huang. "A comprehensive survey of network function virtualization." Computer Networks 133 (2018): 212-262. https://doi.org/10.1016/j.comnet.2018.01.021}
+\par
+
+Virtual Network itu sendiri secara umum merupakan sebuah teknologi atau konsep yang menghubungkan mesin dan/atau perangkat virtual 
+menggunakan perangkat lunak. 
+\footnote{What is virtual networking? | vmware glossary, accessed January 19, 2024, https://www-stage-akorig.vmware.com/topics/glossary/content/virtual-networking.html.} 
+Virtual Network memungkinkan mesin virtual untuk berkomunikasi dengan jaringan, host machine, dan mesin virtual lainnya tanpa adanya perangkat keras sebagai penghubung mesin-mesin tersebut layaknya dalam sebuah jaringan komputer tradisional. 
+\footnote{Thomas Olzak, Jason Boomer, Robert M. Keefer, James Sabovik. "Managing Hyper-V" Microsoft Virtualization (2010): 39-60. https://doi.org/10.1016/B978-1-59749-431-1.00004-7} 
+Terdapat beberapa klasifikasi dan tipe dari Virtual Network. Untuk sistem yang akan dikembangkan, terdapat satu kelas dari Virtual Network yang relevan, yaitu Virtual Private Network (VPN).
+VPN itu sendiri didefinisikan secara umum sebagai sebuah metode untuk menghubungkan dua jaringan yang terpisah melalui sebuah koneksi privat melalui koneksi atau jaringan publik seperti internet.
+\footnote{Ferguson, Paul, and Geoff Huston. "What is a VPN?." (1998): 01-22.}
+\par
+
+Dari konsep dan teknologi yang telah disebutkan sebelumnya, kita dapat menentukan konsep dari solusi yang dapat diimplementasi untuk sistem yang diinginkan.
+Sistem yang nantinya dikembangkan akan memanfaatkan konsep Network Virtualization untuk mengakomodasi kebutuhan dari pembuatan lingkungan lab virtual.
+Untuk mengimplementasikan sebuah sistem instance lab yang terisolasi dan tidak memiliki keterhubungan satu sama lain, 
+dapat digunakan teknologi VPN dimana setiap instance akan berada pada Virtual Network yang berbeda.
+Pengguna kemudian dapat mengakses lab dengan melakukan koneksi terhadap virtual machine pada lingkungan lab melalui koneksi VPN.
+\par
 
 
 %-----------------------------------------------------------------------------%
