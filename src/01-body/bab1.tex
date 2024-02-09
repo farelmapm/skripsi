@@ -2,42 +2,95 @@
 \chapter{\babSatu}
 \label{bab:1}
 %-----------------------------------------------------------------------------%
-Pada bab ini, akan dijelaskan tentang latar belakang dan permasalahan yang diselesaikan pada penelitian ini.
 
 
 %-----------------------------------------------------------------------------%
 \section{Latar Belakang}
 \label{sec:latarBelakang}
 %-----------------------------------------------------------------------------%
-\noindent\todo{Tentukan latar belakang dari penelitian Anda di sini (\f{background}).}
+Seiring berkembangnya teknologi informasi, pertukaran informasi antar komputer menjadi sebuah permasalahan yang semakin krusial. 
+Setiap orang yang berada di dalam dunia teknologi informasi pasti tidak akan terlepas dengan jaringan komputer, dan pemahaman 
+terhadap jaringan komputer sudah menjadi suatu hal yang diekspektasikan dari siapapun yang bekerja di dunia teknologi informasi. 
+Dalam hal ini, Fakultas Ilmu Komputer telah menyediakan mata kuliah Jaringan Komputer Lanjut untuk mengembangkan pemahaman mahasiswa 
+Fakultas Ilmu Komputer terhadap jaringan komputer dengan lebih dalam. Tentunya, mahasiswa juga perlu memiliki pemahaman yang mendasar 
+terhadap jaringan komputer untuk bisa melaksanakan pembelajaran dalam mata kuliah Jaringan Komputer Lanjut secara efektif. \par
+
+Dari kondisi tersebut, memastikan bahwa setiap mahasiswa memiliki kompetensi yang mencukupi untuk mendalami permasalahan jaringan komputer 
+merupakan sebuah tantangan yang perlu ditangani. Untuk mempermudah proses tersebut, dosen Jaringan Komputer Lanjut dapat memanfaatkan sebuah 
+sistem aplikasi web dimana mahasiswa dapat mengerjakan lab yang menuntut mereka untuk menunjukkan dan mempraktikkan pemahaman mereka 
+terhadap jaringan komputer. Lab dalam sistem ini menghubungkan mahasiswa dengan sebuah mesin virtual yang terhubung kedalam sebuah jaringan 
+virtual, dan setiap perbuatan mahasiswa dalam mesin virtual akan dicek dan dinilai melalui pengecekan log sistem operasi yang terpasang pada 
+mesin virtual tersebut. 
+Tentunya, diperlukan juga sebuah sistem instance dan partisi resource yang memungkinkan sistem untuk digunakan dengan jumlah pengguna yang banyak.
+Setiap mahasiswa yang ingin mengerjakan sebuah lab akan diberikan sebuah instance yang dibuat oleh sistem berdasarkan suatu template yang telah didefinisikan sebelumnya, 
+sehingga setiap lingkungan lab tidak memiliki keterhubungan satu sama lain.
+\par
+
+Untuk mengimplementasi sistem tersebut, aplikasi web yang akan dikembangkan perlu menerapkan sebuah teknik yang bernama Network 
+Virtualization. Network Virtualization merupakan sebuah konsep yang telah berkembang pesat dalam waktu 20 tahun terakhir. Network 
+Virtualization itu sendiri merupakan sebuah konsep atau proses yang memungkinkan abstraksi dari fungsi-fungsi perangkat keras dalam 
+sebuah jaringan komputer kedalam perangkat lunak, sehingga sebuah Virtual Network yang berfungsi layaknya sebuah jaringan komputer 
+tradisional yang menghubungkan lebih dari satu perangkat lunak dapat disimulasikan dan dijalankan dalam satu perangkat keras. 
+\footnote{Carapinha, Jorge, and Javier Jiménez. “Network Virtualization: A View from the Bottom.” Proceedings of the 1st ACM workshop on Virtualized infrastructure systems and architectures (2009). https://doi.org/10.1145/1592648.1592660. }
+\footnote{Tutschku, Kurt, Thomas Zinner, Akihiro Nakao, and Phuoc Tran-Gia. "Network virtualization: Implementation steps towards the future internet." Electronic Communications of the EASST 17 (2009).}
+\footnote{Yi, Bo, Xingwei Wang, Keqin Li, and Min Huang. "A comprehensive survey of network function virtualization." Computer Networks 133 (2018): 212-262. https://doi.org/10.1016/j.comnet.2018.01.021}
+\par
+
+Virtual Network itu sendiri secara umum merupakan sebuah teknologi atau konsep yang menghubungkan mesin dan/atau perangkat virtual 
+menggunakan perangkat lunak. 
+\footnote{What is virtual networking? | vmware glossary, accessed January 19, 2024, https://www-stage-akorig.vmware.com/topics/glossary/content/virtual-networking.html.} 
+Virtual Network memungkinkan mesin virtual untuk berkomunikasi dengan jaringan, host machine, dan mesin virtual lainnya tanpa adanya perangkat keras sebagai penghubung mesin-mesin tersebut layaknya dalam sebuah jaringan komputer tradisional. 
+\footnote{Thomas Olzak, Jason Boomer, Robert M. Keefer, James Sabovik. "Managing Hyper-V" Microsoft Virtualization (2010): 39-60. https://doi.org/10.1016/B978-1-59749-431-1.00004-7} 
+Terdapat beberapa klasifikasi dan tipe dari Virtual Network. Untuk sistem yang akan dikembangkan, terdapat satu kelas dari Virtual Network yang relevan, yaitu Virtual Private Network (VPN).
+VPN itu sendiri didefinisikan secara umum sebagai sebuah metode untuk menghubungkan dua jaringan yang terpisah melalui sebuah koneksi privat melalui koneksi atau jaringan publik seperti internet.
+\footnote{Ferguson, Paul, and Geoff Huston. "What is a VPN?." (1998): 01-22.}
+\par
+
+Dari konsep dan teknologi yang telah disebutkan sebelumnya, kita dapat menentukan konsep dari solusi yang dapat diimplementasi untuk sistem yang diinginkan.
+Sistem yang nantinya dikembangkan akan memanfaatkan konsep Network Virtualization untuk mengakomodasi kebutuhan dari pembuatan lingkungan lab virtual.
+Untuk mengimplementasikan sebuah sistem instance lab yang terisolasi dan tidak memiliki keterhubungan satu sama lain, 
+dapat digunakan teknologi VPN dimana setiap instance akan berada pada Virtual Network yang berbeda.
+Pengguna kemudian dapat mengakses lab dengan melakukan koneksi terhadap virtual machine pada lingkungan lab melalui koneksi VPN.
+\par
 
 
 %-----------------------------------------------------------------------------%
 \section{Permasalahan}
 \label{sec:masalah}
 %-----------------------------------------------------------------------------%
-\noindent\todo{Sebutkan permasalahan penelitian Anda dari latar belakang tersebut.}
+Untuk mengembangkan sebuah sistem yang diinginkan, maka perlu dikembangkan fitur-fitur seperti logging untuk interaksi antara user dengan virtual machine,
+sistem instance yang bersifat terisolasi satu sama lain, sistem alokasi resource untuk instance yang telah dibuat oleh sistem, sistem otentikasi dan otorisasi untuk membedakan pengguna,
+sistem session untuk memastikan bahwa setiap instance tidak memakan resource secara sia-sia setelah lab selesai digunakan, dan lain-lain. 
 
+
+Dalam mengembangkan sebuah sistem yang mengimplementasikan sistem instance yang bisa dibuat dalam jumlah yang banyak,
+salah satu permasalahan terbesar yang akan muncul adalah terkait resource allocation.
+Dalam sebuah lab yang paling sederhana, dibutuhkan dua buah virtual machine yang terhubung dalam sebuah virtual network.
+Tergantung terhadap sistem operasi yang digunakan untuk virtual machine, diperlukan storage yang cukup besar hanya untuk instalasi dari sistem operasi itu sendiri.
+Selain itu, tentunya resource lainnya seperti pemanfaatan CPU, GPU, dan memori RAM juga perlu dialokasikan kedalam setiap virtual machine yang telah dibuat dalam suatu instance.
+Kita dapat dengan mudah membayangkan kasus dimana tidak ada resource yang mencukupi untuk memenuhi kebutuhan dari instance lab, bahkan dengan sebuah komputer yang tergolong modern dan canggih.
+\par
 %-----------------------------------------------------------------------------%
 \subsection{Definisi Permasalahan}
 \label{sec:definisiMasalah}
 %-----------------------------------------------------------------------------%
-Berikut ini adalah rumusan permasalahan dari penelitian yang dilakukan:
+Berdasarkan penjelasan pada bagian permasalahan, maka dapat didefinisikan rumusan permasalahan dari proyek ini sebagai berikut:
 \begin{itemize}
-	\item Bagaimana cara membuat pertanyaan penelitian?
+	\item Bagaimana cara merancang sebuah virtual network yang dapat digunakan sebagai dasar dari sistem instance untuk lab?
+	\item Bagaimana cara mengimplementasikan sebuah sistem logging dari setiap perintah yang dilakukan pada virtual machine oleh pengguna lab?
+	\item Bagaimana cara mengoptimasi sistem dalam pembagian, penggunaan, dan alokasi resource yang terbatas?
+	\item Apa solusi dari keterbatasan resource untuk pembuatan sistem?
 \end{itemize}
-\noindent\todo{Tuliskan permasalahan yang ingin diselesaikan. Bisa juga berbentuk pertanyaan}
-
 %-----------------------------------------------------------------------------%
-\subsection{Batasan Permasalahan}
-\label{sec:batasanMasalah}
-%-----------------------------------------------------------------------------%
-Berikut ini adalah asumsi yang digunakan sebagai batasan penelitian ini:
-\begin{itemize}
-	\item Salah satu batasannya adalah, ini hanya \f{template}.
-\end{itemize}
+% \subsection{Batasan Permasalahan}
+% \label{sec:batasanMasalah}
+% %-----------------------------------------------------------------------------%
+% Berikut ini adalah asumsi yang digunakan sebagai batasan penelitian ini:
+% \begin{itemize}
+% 	\item Salah satu batasannya adalah, ini hanya \f{template}.
+% \end{itemize}
 
-\noindent\todo{Umumnya ada asumsi atau batasan yang digunakan untuk menjawab pertanyaan-pertanyaan penelitian diatas.}
+% \noindent\todo{Umumnya ada asumsi atau batasan yang digunakan untuk menjawab pertanyaan-pertanyaan penelitian diatas.}
 
 
 %-----------------------------------------------------------------------------%
@@ -46,63 +99,63 @@ Berikut ini adalah asumsi yang digunakan sebagai batasan penelitian ini:
 %-----------------------------------------------------------------------------%
 Berikut ini adalah tujuan penelitian yang dilakukan:
 \begin{itemize}
-	\item Untuk memberikan \f{template} yang dapat mempermudah skripsi orang lain.
+	\item Mengembangkan sistem aplikasi web yang menyediakan layanan dalam bentuk lab virtual.
+	\item Memudahkan proses evaluasi kompetensi mahasiswa Jaringan Komputer Lanjut.
 \end{itemize}
 
-\noindent\todo{Tuliskan tujuan penelitian Anda di bagian ini.}
+
+% %-----------------------------------------------------------------------------%
+% \section{Posisi Penelitian}
+% \label{sec:posisiPenelitian}
+% %-----------------------------------------------------------------------------%
+% \todo{
+% 	Sebutkan posisi penelitian Anda. Ada baiknya jika Anda menggunakan gambar atau diagram.
+% 	Template ini telah menyediakan contoh cara memasukkan gambar.
+% 	}
+
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.4\textwidth]{assets/pics/makara.png}
+% 	\caption{Penjelasan singkat terkait gambar.}
+% 	\label{fig:research_position}
+% \end{figure}
+
+% \noindent\todo{Jelaskan \pic~\ref{fig:research_position} di sini.}
 
 
-%-----------------------------------------------------------------------------%
-\section{Posisi Penelitian}
-\label{sec:posisiPenelitian}
-%-----------------------------------------------------------------------------%
-\todo{
-	Sebutkan posisi penelitian Anda. Ada baiknya jika Anda menggunakan gambar atau diagram.
-	Template ini telah menyediakan contoh cara memasukkan gambar.
-	}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.4\textwidth]{assets/pics/makara.png}
-	\caption{Penjelasan singkat terkait gambar.}
-	\label{fig:research_position}
-\end{figure}
-
-\noindent\todo{Jelaskan \pic~\ref{fig:research_position} di sini.}
-
-
-%-----------------------------------------------------------------------------%
-\section{Langkah Penelitian}
+% %-----------------------------------------------------------------------------%
+\section{Langkah Penelitian (Metode Pemecahan Masalah)}
 \label{sec:langkahPenelitian}
 %-----------------------------------------------------------------------------%
-Berikut ini adalah langkah penelitian yang telah dilakukan:
+Untuk memecahkan permasalahan yang telah dirumuskan, maka metode-metode berikut ini akan diterapkan dalam penelitian:
 \begin{enumerate}
-	\item Tinjauan literatur \\
-	Pada tahap ini, dipelajari teori-teori yang terkait dengan penelitian ini untuk mendapatkan konsep dasar yang dibutuhkan dalam mencapai tujuan penelitian.
-	\item Analisis implementasi dan kesimpulan \\
-	Pada tahap ini, digunakan studi kasus untuk analisis terkait kegunaan \f{template}.
-	Setelah melakukan analisis tersebut, ditarik kesimpulan keseluruhan dari penelitian ini.
+	\item Pendalaman materi terhadap Virtualization, Network Virtualization, Virtual Network, Virtual Machine, dan Operating System Logging. \\
+	Sebelum pengembangan aplikasi dapat dilaksanakan, perlu adanya pemahaman yang mendalam terhadap konsep-konsep yang akan diterapkan sebagai sistem solusi dari permasalahan.
+	\item Penentuan infrastruktur solusi \\
+	Setelah pendalaman materi telah dilaksanakan, perlu dirumuskan sebuah solusi konkrit yang mencakup infrastruktur dan stack yang akan digunakan untuk pengembangan sistem.
+	\item Pengembangan sistem \\
+	Apabila infrastruktur dari sistem solusi telah ditentukan, maka pengembangan aplikasi berdasarkan perancangan yang telah dibuat dapat dilaksanakan.
 \end{enumerate}
 
 
-%-----------------------------------------------------------------------------%
-\section{Sistematika Penulisan}
-\label{sec:sistematikaPenulisan}
-%-----------------------------------------------------------------------------%
-Sistematika penulisan laporan adalah sebagai berikut:
-\begin{itemize}
-	\item Bab 1 \babSatu \\
-	    Bab ini mencakup latar belakang, cakupan penelitian, dan pendefinisian masalah.
-	\item Bab 2 \babDua \\
-	    Bab ini mencakup pemaparan terminologi dan teori yang terkait dengan penelitian berdasarkan hasil tinjauan pustaka yang telah digunakan, sekaligus memperlihatkan kaitan teori dengan penelitian.
-	\item Bab 3 \babTiga \\
-	    Apa itu Bab 3?
-	\item Bab 4 \babEmpat \\
-		Apa itu Bab 4?
-	\item Bab 5 \babLima \\
-	    Apa itu Bab 5?
-	\item Bab 6 \kesimpulan \\
-	    Bab ini mencakup kesimpulan akhir penelitian dan saran untuk pengembangan berikutnya.
-\end{itemize}
+% %-----------------------------------------------------------------------------%
+% \section{Sistematika Penulisan}
+% \label{sec:sistematikaPenulisan}
+% %-----------------------------------------------------------------------------%
+% Sistematika penulisan laporan adalah sebagai berikut:
+% \begin{itemize}
+% 	\item Bab 1 \babSatu \\
+% 	    Bab ini mencakup latar belakang, cakupan penelitian, dan pendefinisian masalah.
+% 	\item Bab 2 \babDua \\
+% 	    Bab ini mencakup pemaparan terminologi dan teori yang terkait dengan penelitian berdasarkan hasil tinjauan pustaka yang telah digunakan, sekaligus memperlihatkan kaitan teori dengan penelitian.
+% 	\item Bab 3 \babTiga \\
+% 	    Apa itu Bab 3?
+% 	\item Bab 4 \babEmpat \\
+% 		Apa itu Bab 4?
+% 	\item Bab 5 \babLima \\
+% 	    Apa itu Bab 5?
+% 	\item Bab 6 \kesimpulan \\
+% 	    Bab ini mencakup kesimpulan akhir penelitian dan saran untuk pengembangan berikutnya.
+% \end{itemize}
 
-\noindent\todo{Anda bisa mengubah atau menambahkan penjelasan singkat mengenai isi masing-masing bab. Setiap tugas akhir pasti ada yang berbeda pada bagian ini.}
+% \noindent\todo{Anda bisa mengubah atau menambahkan penjelasan singkat mengenai isi masing-masing bab. Setiap tugas akhir pasti ada yang berbeda pada bagian ini.}
