@@ -35,7 +35,7 @@
 %
 % Sampul Laporan
 \include{_internals/sampul}
-% \forceclearchapter
+\forceclearchapter
 
 %
 % Gunakan penomeran romawi
@@ -46,11 +46,11 @@
 \disableboldchapterintoc
 %
 % load halaman judul dalam
-% \strcompare{Kampus Merdeka}{\type}{} {
-% 	\addChapter{HALAMAN JUDUL}
-% 	\include{_internals/judul_dalam}
-% 	\forceclearchapter
-% }
+\strcompare{Kampus Merdeka}{\type}{} {
+	\addChapter{HALAMAN JUDUL}
+	\include{_internals/judul_dalam}
+	\forceclearchapter
+}
 
 %
 % load halaman orisinalitas
@@ -60,8 +60,8 @@
 
 \strcompare{Laporan Kerja Praktik}{\type}{} {
 \strcompare{Kampus Merdeka}{\type}{} {
-	% \include{src/00-frontMatter/pernyataanOrisinalitas}
-	% \forceclearchapter
+	\include{src/00-frontMatter/pernyataanOrisinalitas}
+	\forceclearchapter
 }}
 
 % Memunculkan penomoran kembali
@@ -76,25 +76,24 @@
 \strcompare{Laporan Kerja Praktik}{\type}
 {
 	% Lembar Pengesahan Kerja Praktik dari LaTeX
-	% \addChapter{LEMBAR PERSETUJUAN DOSEN KERJA PRAKTIK}
-	% \include{src/00-frontMatter/pengesahanKP}
-	% \forceclearchapter
-
+	\addChapter{LEMBAR PERSETUJUAN DOSEN KERJA PRAKTIK}
+	\include{src/00-frontMatter/pengesahanKP}
+	\forceclearchapter
 }{
 \strcompare{Kampus Merdeka}{\type}
 {
-	% \addChapter{LEMBAR PENGESAHAN}
-	% \include{src/00-frontMatter/pengesahanMBKM}
-	% \forceclearchapter
+	\addChapter{LEMBAR PENGESAHAN}
+	\include{src/00-frontMatter/pengesahanMBKM}
+	\forceclearchapter
 }
 {
-	% \addChapter{LEMBAR PENGESAHAN}
+	\addChapter{LEMBAR PENGESAHAN}
 	% Gunakan salah satu (comment atau hapus kode yang tidak perlu):
 	% Lembar Pengesahan Tugas Akhir dari LaTeX
-	% \strcompare{Doktor}{\jenjang}
-	% {\include{src/00-frontMatter/pengesahanSidangS3}}
-	% {\include{src/00-frontMatter/pengesahanSidang}}
-	% \forceclearchapter
+	\strcompare{Doktor}{\jenjang}
+	{\include{src/00-frontMatter/pengesahanSidangS3}}
+	{\include{src/00-frontMatter/pengesahanSidang}}
+	\forceclearchapter
 	% Lembar Pengesahan dari PDF lain (misal: generated oleh SISIDANG [Fasilkom])
 	%\putpdf{assets/pdfs/pengesahanSidang.pdf}
 }}
@@ -102,16 +101,16 @@
 
 \strcompare{Laporan Kerja Praktik}{\type}{} {
 \strcompare{Kampus Merdeka}{\type}{} {
-	% %
-	% % Kata Pengantar
-	% \addChapter{\kataPengantar}
-	% \include{src/00-frontMatter/kataPengantar}
-	% \forceclearchapter
-	% %
-	% % Lembar Persetujuan Publikasi Ilmiah
-	% \addChapter{LEMBAR PERSETUJUAN PUBLIKASI ILMIAH}
-	% \include{src/00-frontMatter/persetujuanPublikasi}
-	% \forceclearchapter
+	%
+	% Kata Pengantar
+	\addChapter{\kataPengantar}
+	\include{src/00-frontMatter/kataPengantar}
+	\forceclearchapter
+	%
+	% Lembar Persetujuan Publikasi Ilmiah
+	\addChapter{LEMBAR PERSETUJUAN PUBLIKASI ILMIAH}
+	\include{src/00-frontMatter/persetujuanPublikasi}
+	\forceclearchapter
 }}
 
 %
@@ -120,42 +119,42 @@
 \pagestyle{first-pages}
 
 %
-% \addChapter{ABSTRAK}
-% \include{src/00-frontMatter/abstrak}
-% %
-% %
-% \include{src/00-frontMatter/abstract}
+\addChapter{ABSTRAK}
+\include{src/00-frontMatter/abstrak}
+%
+%
+\include{src/00-frontMatter/abstract}
 
 %
 % Daftar isi, gambar, tabel, dan kode
 %
-% \CAPinToC % All entries in ToC will be CAPITALIZED from here on
-% \phantomsection %hack to make them clickable
-% \singlespacing
-% \tableofcontents
-% \setstretch{1.4}
-% \clearpage
-% \phantomsection %hack to make them clickable
-% \singlespacing
-% \listoffigures
-% \setstretch{1.4}
-% \clearpage
-% \phantomsection %hack to make them clickable
-% \singlespacing
-% \listoftables
-% \setstretch{1.4}
-% \clearpage
+\CAPinToC % All entries in ToC will be CAPITALIZED from here on
+\phantomsection %hack to make them clickable
+\singlespacing
+\tableofcontents
+\setstretch{1.4}
+\clearpage
+\phantomsection %hack to make them clickable
+\singlespacing
+\listoffigures
+\setstretch{1.4}
+\clearpage
+\phantomsection %hack to make them clickable
+\singlespacing
+\listoftables
+\setstretch{1.4}
+\clearpage
 
 %
 % Daftar Kode Program
 % Comment to disable.
 %
-% \phantomsection %hack to make them clickable
-% \addcontentsline{toc}{chapter}{\lstlistlistingname}
-% \singlespacing
-% \listoflistings
-% \setstretch{1.4}
-% \clearpage
+\phantomsection %hack to make them clickable
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\singlespacing
+\listoflistings
+\setstretch{1.4}
+\clearpage
 
 %
 % Daftar Isi yang Didefinisikan Sendiri (Custom)
@@ -184,16 +183,16 @@
 % Daftar Lampiran
 % Comment to disable.
 %
-% \phantomsection %hack to make them clickable
-% \addcontentsline{toc}{chapter}{\listofappendixname}
-% \singlespacing
-% \listofappendix
-% \setstretch{1.4}
+\phantomsection %hack to make them clickable
+\addcontentsline{toc}{chapter}{\listofappendixname}
+\singlespacing
+\listofappendix
+\setstretch{1.4}
 
-% % Table of content normal lagi hurufnya
-% \enableboldchapterintoc
+% Table of content normal lagi hurufnya
+\enableboldchapterintoc
 
-% \clearpage
+\clearpage
 
 % Jika penomoran romawi selesai di ganjil
 %\naiveoddclearchapter
@@ -213,35 +212,35 @@
 \setoddevenheader
 \include{src/01-body/bab1}
 \clearchapter
-% \include{src/01-body/bab2}
-% \clearchapter
-% \include{src/01-body/bab3}
-% \clearchapter
-% \include{src/01-body/bab4}
-% \clearchapter
-% \include{src/01-body/bab5}
-% \clearchapter
-% \include{src/01-body/kesimpulan}
-% \clearchapter
+\include{src/01-body/bab2}
+\clearchapter
+\include{src/01-body/bab3}
+\clearchapter
+\include{src/01-body/bab4}
+\clearchapter
+\include{src/01-body/bab5}
+\clearchapter
+\include{src/01-body/kesimpulan}
+\clearchapter
 
 %
 % Daftar Pustaka
-% \CAPinToC % All entries in ToC will be CAPITALIZED from here on
-% \include{_internals/pustaka}
-% \clearchapter
-% \noCAPinToC % Revert to original \addcontentsline formatting
+\CAPinToC % All entries in ToC will be CAPITALIZED from here on
+\include{_internals/pustaka}
+\clearchapter
+\noCAPinToC % Revert to original \addcontentsline formatting
 
 %
 % Lampiran
 %
-% \begin{appendix}
-% 	\newcounter{pagetemp}
-% 	\setcounter{pagetemp}{\thepage}
-% 	\include{_internals/markLampiran}
-% 	\clearchapter
-% 	\setcounter{page}{\thepagetemp}
-% 	\stepcounter{page}
-% 	\include{src/99-backMatter/lampiran}
-% \end{appendix}
+\begin{appendix}
+	\newcounter{pagetemp}
+	\setcounter{pagetemp}{\thepage}
+	\include{_internals/markLampiran}
+	\clearchapter
+	\setcounter{page}{\thepagetemp}
+	\stepcounter{page}
+	\include{src/99-backMatter/lampiran}
+\end{appendix}
 
 \end{document}
