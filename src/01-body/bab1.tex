@@ -8,6 +8,8 @@
 \section{Latar Belakang}
 \label{sec:latarBelakang}
 %-----------------------------------------------------------------------------%
+Peran dari internet di abad ke-21 sudah tidak bisa dipisahkan dari kehidupan sehari-hari manusia.  
+
 Seiring berkembangnya teknologi informasi, pertukaran informasi antar komputer menjadi sebuah permasalahan yang semakin krusial. 
 Setiap orang yang berada di dalam dunia teknologi informasi pasti tidak akan terlepas dengan jaringan komputer, dan pemahaman 
 terhadap jaringan komputer sudah menjadi suatu hal yang diekspektasikan dari siapapun yang bekerja di dunia teknologi informasi. 
@@ -16,48 +18,61 @@ Fakultas Ilmu Komputer terhadap jaringan komputer dengan lebih dalam. Tentunya, 
 terhadap jaringan komputer untuk bisa melaksanakan pembelajaran dalam mata kuliah Jaringan Komputer Lanjut secara efektif. \par
 
 Dari kondisi tersebut, memastikan bahwa setiap mahasiswa memiliki kompetensi yang mencukupi untuk mendalami permasalahan jaringan komputer 
-merupakan sebuah tantangan yang perlu ditangani. Untuk mempermudah proses tersebut, dosen Jaringan Komputer Lanjut dapat memanfaatkan sebuah 
-sistem aplikasi web dimana mahasiswa dapat mengerjakan lab yang menuntut mereka untuk menunjukkan dan mempraktikkan pemahaman mereka 
-terhadap jaringan komputer. Lab dalam sistem ini menghubungkan mahasiswa dengan sebuah mesin virtual yang terhubung kedalam sebuah jaringan 
-virtual, dan setiap perbuatan mahasiswa dalam mesin virtual akan dicek dan dinilai melalui pengecekan log sistem operasi yang terpasang pada 
-mesin virtual tersebut. 
-Tentunya, diperlukan juga sebuah sistem instance dan partisi resource yang memungkinkan sistem untuk digunakan dengan jumlah pengguna yang banyak.
-Setiap mahasiswa yang ingin mengerjakan sebuah lab akan diberikan sebuah instance yang dibuat oleh sistem berdasarkan suatu template yang telah didefinisikan sebelumnya, 
+merupakan sebuah tantangan yang perlu ditangani. Pada saat proses penulisan, solusi dari tantangan tersebut merupakan pengadaan materi
+\textit{review} oleh dosen Jaringan Komputer Lanjut yang dilaksanakan melalui pemberian materi ulang serta penilaian dalam bentuk kuis dan tes tertulis.
+Proses ini membutuhkan verifikasi manual yang memakan waktu satu minggu yang seharusnya dapat dimanfaatkan untuk mendalami materi-materi yang perlu dibahas
+dalam mata kuliah Jaringan Komputer Lanjut. Untuk mempermudah dan mempercepat proses yang memakan waktu ini, dapat dikembangkan sebuah 
+sistem aplikasi web dimana proses evaluasi kompetensi dilakukan melalui pengerjaan \textit{lab online} yang memiliki sistem penilaian otomatis seperti \textit{grader}.
+Lab dalam sistem ini menghubungkan mahasiswa dengan sebuah mesin virtual yang terhubung kedalam sebuah jaringan 
+virtual atau \textit{virtual network}, dan setiap perbuatan mahasiswa dalam mesin virtual akan dicatat dan dinilai melalui pengecekan log dari perintah yang telah diberikan
+oleh mahasiswa pada lab tersebut. 
+Tentunya, diperlukan sebuah sistem \textit{instance} dan partisi \textit{resource} yang memungkinkan sistem tersebut untuk digunakan dengan jumlah pengguna yang banyak.
+Setiap mahasiswa yang ingin mengerjakan sebuah lab akan diberikan sebuah \textit{instance} mesin virtual unik yang disediakan oleh sistem berdasarkan suatu \textit{template} yang telah didefinisikan sebelumnya, 
 sehingga setiap lingkungan lab tidak memiliki keterhubungan satu sama lain.
 \par
 
-Untuk mengimplementasi sistem tersebut, aplikasi web yang akan dikembangkan perlu menerapkan sebuah teknik yang bernama Network 
-Virtualization. Network Virtualization merupakan sebuah konsep yang telah berkembang pesat dalam waktu 20 tahun terakhir. Network 
-Virtualization itu sendiri merupakan sebuah konsep atau proses yang memungkinkan abstraksi dari fungsi-fungsi perangkat keras dalam 
-sebuah jaringan komputer kedalam perangkat lunak, sehingga sebuah Virtual Network yang berfungsi layaknya sebuah jaringan komputer 
-tradisional yang menghubungkan lebih dari satu perangkat lunak dapat disimulasikan dan dijalankan dalam satu perangkat keras. 
+% Terdapat berbagai macam solusi sistem yang dapat dipilih dan dikembangkan untuk memenuhi kebutuhan-kebutuhan tersebut. Salah satu konsep yang dapat diterapkan
+% adalah \textit{virtual network emulation}. 
+
+Terdapat banyak solusi yang dapat diterapkan agar sistem yang diinginkan dapat terealisasi. Konsep yang dipilih sebagai solusi dari permasalahan ini adalah konsep Network
+Virtualization. Untuk memahami apa itu \textit{Network Virtualization}, kita perlu memahami konsep \textit{virtualization}.
+\textit{Virtualization} secara prinsip meliputi penggunaan sebuah \textit{software layer} yang mengenkapsulasi sebuah sistem operasi, sehingga
+\textit{software layer} tersebut dapat memberikan input, output, dan \textit{behavior} yang identik dengan apa yang diharapkan dari sebuah perangkat fisik.
+\footnote{Michael Pearce, Sherali Zeadally, and Ray Hunt, “Virtualization,” ACM Computing Surveys 45, no. 2 (February 2013): 1–39, https://doi.org/10.1145/2431211.2431216.}
+\textit{Virtualization} memberikan sebuah abstraksi antara pengguna dan sumber daya fisik, sehingga pengguna seolah-olah dapat berinteraksi secara langsung dengan
+sumber daya fisik tersebut tanpa adanya hubungan atau koneksi langsung antara pengguna dan sumber daya fisik.
 \footnote{Carapinha, Jorge, and Javier Jiménez. “Network Virtualization: A View from the Bottom.” Proceedings of the 1st ACM workshop on Virtualized infrastructure systems and architectures (2009). https://doi.org/10.1145/1592648.1592660. }
+Berangkat dari pemahaman konsep \textit{virtualization} tersebut, Network Virtualization merupakan sebuah teknologi yang memungkinkan pengoperasian dari 
+banyak \textit{logical network} dalam satu perangkat fisik.
 \footnote{Tutschku, Kurt, Thomas Zinner, Akihiro Nakao, and Phuoc Tran-Gia. "Network virtualization: Implementation steps towards the future internet." Electronic Communications of the EASST 17 (2009).}
-\footnote{Yi, Bo, Xingwei Wang, Keqin Li, and Min Huang. "A comprehensive survey of network function virtualization." Computer Networks 133 (2018): 212-262. https://doi.org/10.1016/j.comnet.2018.01.021}
+Dengan memungkinkan adanya banyak arsitektur jaringan komputer yang bersifat heterogen dalam satu perangkat fisik, Network Virtualization memberikan flexibilitas, mempromosikan keragaman, menjamin keamanan, 
+dan meningkatkan pengelolaan.
+\footnote{N.M.M.K. Chowdhury and R. Boutaba, “Network Virtualization: State of the Art and Research Challenges,” IEEE Communications Magazine 47, no. 7 (July 2009): 20–26, https://doi.org/10.1109/mcom.2009.5183468.}
 \par
+
+% Implementasi dari konsep atau teknologi Network Virtualization dilakukan dengan memanfaatkan Mininet. Mininet adalah sebuah \textit{network emulator} yang 
+% dapat mengemulasikan sebuah jaringan virtual yang terdiri dari \textit{virtual hosts, switches, controllers,} dan \textit{links}. 
+% \footnote{Mininet Project Contributors, “Mininet Overview,” Mininet, accessed February 9, 2024, https://mininet.org/overview/.}
+% Mininet dipilih sebagai solusi dari \textit{emulator} jaringan virtual karena Mininet menyediakan sebuah API untuk Python yang dapat digunakan
+% sebagai dasar dari \textit{backend} sistem web yang akan dikembangkan. Dengan Mininet, pembuatan sebuah jaringan virtual dapat dilaksanakan
+% melalui \textit{command} yang telah disediakan oleh Mininet, dan interaksi dengan \textit{node} pada jaringan virtual tersebut dapat dilakukan
+% dengan memanfaatkan API untuk Python. 
 
 Virtual Network itu sendiri secara umum merupakan sebuah teknologi atau konsep yang menghubungkan mesin dan/atau perangkat virtual 
 menggunakan perangkat lunak. 
-\footnote{What is virtual networking? | vmware glossary, accessed January 19, 2024, https://www-stage-akorig.vmware.com/topics/glossary/content/virtual-networking.html.} 
-Virtual Network memungkinkan mesin virtual untuk berkomunikasi dengan jaringan, host machine, dan mesin virtual lainnya tanpa adanya perangkat keras sebagai penghubung mesin-mesin tersebut layaknya dalam sebuah jaringan komputer tradisional. 
+\footnote{What is virtual networking?, accessed February 9, 2024, https://www.vmware.com/topics/glossary/content/virtual-networking.html.} 
+Virtual Network memungkinkan mesin virtual untuk berkomunikasi dengan jaringan, \textit{host machine}, dan mesin virtual 
+lainnya tanpa adanya perangkat keras sebagai penghubung mesin-mesin tersebut layaknya dalam sebuah jaringan komputer tradisional. 
 \footnote{Thomas Olzak, Jason Boomer, Robert M. Keefer, James Sabovik. "Managing Hyper-V" Microsoft Virtualization (2010): 39-60. https://doi.org/10.1016/B978-1-59749-431-1.00004-7} 
-Terdapat beberapa klasifikasi dan tipe dari Virtual Network. Untuk sistem yang akan dikembangkan, terdapat satu kelas dari Virtual Network yang relevan, yaitu Virtual Private Network (VPN).
-VPN itu sendiri didefinisikan secara umum sebagai sebuah metode untuk menghubungkan dua jaringan yang terpisah melalui sebuah koneksi privat melalui koneksi atau jaringan publik seperti internet.
-\footnote{Ferguson, Paul, and Geoff Huston. "What is a VPN?." (1998): 01-22.}
+Virtual Network merupakan dasar dari sistem yang akan dikembangkan nantinya serta merupakan tujuan akhir dari pengimplementasian teknologi \textit{Network Virtualization},
+dimana setiap lab akan berada dalam sebuah lingkungan berupa Virtual Network, sehingga setiap \textit{instance} dari lab bersifat unik dan terisolasi satu sama lain.
 \par
-
-Dari konsep dan teknologi yang telah disebutkan sebelumnya, kita dapat menentukan konsep dari solusi yang dapat diimplementasi untuk sistem yang diinginkan.
-Sistem yang nantinya dikembangkan akan memanfaatkan konsep Network Virtualization untuk mengakomodasi kebutuhan dari pembuatan lingkungan lab virtual.
-Untuk mengimplementasikan sebuah sistem instance lab yang terisolasi dan tidak memiliki keterhubungan satu sama lain, 
-dapat digunakan teknologi VPN dimana setiap instance akan berada pada Virtual Network yang berbeda.
-Pengguna kemudian dapat mengakses lab dengan melakukan koneksi terhadap virtual machine pada lingkungan lab melalui koneksi VPN.
-\par
-
 
 %-----------------------------------------------------------------------------%
 \section{Permasalahan}
 \label{sec:masalah}
 %-----------------------------------------------------------------------------%
+Dalam implementasi sebuah sistem yang menyediakan fitur \textit{instance} unik untuk setiap lingkungan lab, 
 Untuk mengembangkan sebuah sistem yang diinginkan, maka perlu dikembangkan fitur-fitur seperti logging untuk interaksi antara user dengan virtual machine,
 sistem instance yang bersifat terisolasi satu sama lain, sistem alokasi resource untuk instance yang telah dibuat oleh sistem, sistem otentikasi dan otorisasi untuk membedakan pengguna,
 sistem session untuk memastikan bahwa setiap instance tidak memakan resource secara sia-sia setelah lab selesai digunakan, dan lain-lain. 
