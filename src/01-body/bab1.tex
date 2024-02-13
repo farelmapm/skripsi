@@ -122,18 +122,23 @@ memulai lab, dan lab akan dianggap selesai serta akan dievaluasi setelah mahasis
 \section{Permasalahan}
 \label{sec:masalah}
 %-----------------------------------------------------------------------------%
-Dalam implementasi sebuah sistem yang menyediakan fitur \textit{instance} unik untuk setiap lingkungan lab, 
-Untuk mengembangkan sebuah sistem yang diinginkan, maka perlu dikembangkan fitur-fitur seperti logging untuk interaksi antara user dengan virtual machine,
-sistem instance yang bersifat terisolasi satu sama lain, sistem alokasi resource untuk instance yang telah dibuat oleh sistem, sistem otentikasi dan otorisasi untuk membedakan pengguna,
-sistem session untuk memastikan bahwa setiap instance tidak memakan resource secara sia-sia setelah lab selesai digunakan, dan lain-lain. 
+Terdapat banyak aspek yang perlu diperhatikan dalam mengembangkan sebuah sistem yang telah disebutkan pada bagian sebelumnya. Setiap fitur yang nantinya akan dikembangkan
+memiliki pilihan solusi komponen yang beragam, sehingga perlu ada sebuah analisis terhadap komponen apa saja yang akan dipilih sebagai solusi, dan bagaimana 
+setiap komponen yang dipilih nantinya dapat berinteraksi dengan komponen-komponen lainnya sehingga sistem aplikasi web dapat berjalan dengan kohesif. 
+\par
 
+Selain itu, sistem yang dikembangkan perlu memiliki kemampuan untuk melayani banyak pengguna dalam suatu waktu tertentu. Untuk bisa menjalankan sebuah mesin virtual,
+komputer yang berperan sebagai \textit{server} dari aplikasi web perlu mengalokasikan \textit{resource} agar mesin virtual bisa dijalankan. Apabila pengguna tidak berjumlah banyak,
+hal ini bukanlah menjadi sebuah masalah. Namun, tentunya terdapat puluhan mahasiswa yang mengikuti mata kuliah Jaringan Komputer Lanjut, dan apabila setiap mahasiswa
+mata kuliah Jaringan Komputer Lanjut ingin melaksanakan pengerjaan lab di waktu yang bersamaan, maka alokasi \textit{resource} dapat menjadi suatu masalah yang besar.
+Apabila alokasi \textit{resource} tidak dapat dilakukan secara efektif, maka sistem beresiko untuk mengalami situasi \textit{down} yang dapat mengganggu proses pengerjaan lab.
+Perlu dikembangkan sebuah solusi alokasi \textit{resource} yang efektif dan efisien, sehingga setiap mahasiswa dapat melaksanakan proses pengerjaan lab secara lancar.
+\par
 
-Dalam mengembangkan sebuah sistem yang mengimplementasikan sistem instance yang bisa dibuat dalam jumlah yang banyak,
-salah satu permasalahan terbesar yang akan muncul adalah terkait resource allocation.
-Dalam sebuah lab yang paling sederhana, dibutuhkan dua buah virtual machine yang terhubung dalam sebuah virtual network.
-Tergantung terhadap sistem operasi yang digunakan untuk virtual machine, diperlukan storage yang cukup besar hanya untuk instalasi dari sistem operasi itu sendiri.
-Selain itu, tentunya resource lainnya seperti pemanfaatan CPU, GPU, dan memori RAM juga perlu dialokasikan kedalam setiap virtual machine yang telah dibuat dalam suatu instance.
-Kita dapat dengan mudah membayangkan kasus dimana tidak ada resource yang mencukupi untuk memenuhi kebutuhan dari instance lab, bahkan dengan sebuah komputer yang tergolong modern dan canggih.
+Di sisi lain, sebagai sebuah sistem yang ditujukan untuk menunjang pembelajaran dan pengujian kompetensi mahasiswa, perlu diperhatikan metodologi pembelajaran
+yang akan dipersembahkan oleh sistem kepada mahasiswa. Untuk memastikan bahwa sistem pengujian berbasis lab dapat memastikan bahwa mahasiswa memiliki kompetensi yang memadai,
+diperlukan adanya sebuah evaluasi terhadap sistem pengujian berbasis lab, analisis implementasi dari pengujian berbasis lab secara empiris, serta aspek-aspek lainnya
+yang perlu dipertimbangkan dalam mengimplementasikan sebuah sistem pembelajaran atau pengujian berbasis lab.  
 \par
 %-----------------------------------------------------------------------------%
 \subsection{Definisi Permasalahan}
@@ -141,22 +146,21 @@ Kita dapat dengan mudah membayangkan kasus dimana tidak ada resource yang mencuk
 %-----------------------------------------------------------------------------%
 Berdasarkan penjelasan pada bagian permasalahan, maka dapat didefinisikan rumusan permasalahan dari proyek ini sebagai berikut:
 \begin{itemize}
-	\item Bagaimana cara merancang sebuah virtual network yang dapat digunakan sebagai dasar dari sistem instance untuk lab?
-	\item Bagaimana cara mengimplementasikan sebuah sistem logging dari setiap perintah yang dilakukan pada virtual machine oleh pengguna lab?
+	\item Bagaimana cara mengimplementasi virtual lab sebagai sistem evaluasi otomatis?
 	\item Bagaimana cara mengoptimasi sistem dalam pembagian, penggunaan, dan alokasi resource yang terbatas?
-	\item Apa solusi dari keterbatasan resource untuk pembuatan sistem?
+	\item Bagaimana implementasi sistem lab agar pembelajaran dan pengujian kompetensi mahasiswa dapat dilaksanakan secara efektif?
 \end{itemize}
 -----------------------------------------------------------------------------%
 \subsection{Batasan Permasalahan}
 \label{sec:batasanMasalah}
 %-----------------------------------------------------------------------------%
-Berikut ini adalah asumsi yang digunakan sebagai batasan penelitian ini:
+Dalam penelitian serta pengembangan aplikasi dari proyek ini, terdapat beberapa asumsi dan batasan permasalahan yang perlu didefinisikan, yaitu:
 \begin{itemize}
-	\item Salah satu batasannya adalah, ini hanya \f{template}.
+	\item Sistem aplikasi web hanya akan digunakan dan dimanfaatkan oleh mahasiswa dan dosen Jaringan Komputer Lanjut sebagai sarana evaluasi.
+	\item Pengembangan proyek, termasuk implementasi \textit{backend} dan \textit{frontend}, dilaksanakan secara efektif dalam rentang waktu 5 bulan antara bulan Februari 2024 hingga Juni 2024.
+	\item Implementasi dari sebuah sistem evaluasi untuk mahasiswa Jaringan Komputer Lanjut berdasarkan konsep lab untuk mesin virtual yang dapat diakses oleh mahasiswa.
+	\item Proyek tidak mengembangkan sistem jaringan virtual ataupun sistem mesin virtual dari awal, melainkan mengimplementasi dan mengintegrasikan layanan-layanan yang menyediakan jaringan virtual dan mesin virtual kedalam suatu aplikasi web.
 \end{itemize}
-
-\noindent\todo{Umumnya ada asumsi atau batasan yang digunakan untuk menjawab pertanyaan-pertanyaan penelitian diatas.}
-
 
 %-----------------------------------------------------------------------------%
 \section{Tujuan Penelitian}
