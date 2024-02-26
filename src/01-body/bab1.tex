@@ -24,38 +24,44 @@ yang memadai dalam materi-materi yang telah disediakan dalam mata kuliah Jaringa
 \par
 
 Memastikan bahwa mahasiswa Jaringan Komputer Lanjut memiliki kompetensi yang memadai dalam materi mata kuliah Jaringan Komputer dapat dilakukan dengan berbagai macam cara.
-Dalam waktu penulisan, mata kuliah Jaringan Komputer Lanjut biasanya mengalokasikan waktu satu minggu sebagai waktu untuk meninjau ulang materi mata kuliah
+Pada saat ini, mata kuliah Jaringan Komputer Lanjut biasanya mengalokasikan waktu satu minggu sebagai waktu untuk meninjau ulang materi mata kuliah
 Jaringan Komputer, dimana mahasiswa akan diberikan materi singkat untuk mengingat kembali mata kuliah Jaringan Komputer serta akan diberikan sebuah evaluasi
 dalam bentuk kuis untuk mengetes sebarapa jauh mahasiswa memahami materi Jaringan Komputer. Evaluasi kuis ini dilaksanakan dalam bentuk tes tertulis, yang nantinya
 akan dinilai oleh dosen secara manual. 
 \par
 
 Meskipun proses tersebut merupakan sebuah solusi yang memadai untuk meninjau kompetensi mahasiswa, tentunya proses tersebut juga membutuhkan waktu yang cukup lama,
-yang akhirnya berdampak dalam penundaan pemberian materi mata kuliah Jaringan Komputer Lanjut itu sendiri. Penulis mengusulkan sebuah solusi yang dapat mempercepat
-dan mempermudah proses peninjauan kompetensi mahasiswa Jaringan Komputer Lanjut melalui pengembangan sistem aplikasi web yang memberikan layanan lab
-untuk mahasiswa, yang nantinya akan dimanfaatkan sebagai saran penilaian otomatis dan menggantikan evaluasi tes tertulis yang sebelumnya digunakan pada mata kuliah Jaringan Komputer Lanjut.
-Sistem ini akan dibangun dengan memerhatikan aspek-aspek \textit{lab based learning} pada mahasiswa untuk memastikan bahwa hasil dari evaluasi yang dilakukan dengan penggunaan
-lab merupakan hasil yang representatif terhadap kompetensi mahasiswa pada bidang tersebut.
+yang akhirnya berdampak dalam penundaan pemberian materi mata kuliah Jaringan Komputer Lanjut itu sendiri. Dosen Jaringan Komputer Lanjut dapat mempercepat proses tersebut apabila
+terdapat sebuah sistem otomatisasi yang dapat digunakan oleh dosen untuk mengevaluasi kompetensi mahasiswa Jaringan Komputer lanjut tanpa perlu adanya evaluasi tertulis yang akan dicek 
+secara manual. Sistem yang dapat melakukan otomatisasi tersebut tidak hanya dapat mempercepat proses evaluasi, tetapi juga dapat membuat keseluruhan proses evaluasi menjadi lebih efektif dan
+efisien, serta mempermudah proses evaluasi bagi dosen. 
 \par
 
-Dalam sistem aplikasi web ini, semua mahasiswa Jaringan Komputer Lanjut akan diberikan sebuah akun yang nantinya akan digunakan untuk mengakses aplikasi web.
-Aplikasi web akan menyediakan beberapa lab yang secara keseluruhan akan mencakup seluruh materi Jaringan Komputer. Dalam sistem ini, lab yang diberikan berbentuk
-mesin virtual yang dapat diakses oleh mahasiswa melalui \textit{web browser}. Mesin virtual ini telah dikonfigurasikan berdasarkan kebutuhan masing-masing topik lab
-oleh dosen melalui sebuah halaman perantara pada sistem aplikasi web, dan mesin virtual ini berada di dalam sebuah jaringan virtual sehingga mesin virtual
-seolah-olah berada dalam sebuah jaringan fisik dengan mesin-mesin lainnya. Mahasiswa akan diberikan sebuah halaman pada aplikasi web dimana mahasiswa dapat melihat
-dan memilih seluruh lab yang tersedia. Ketika mahasiswa memutuskan untuk melaksanakan suatu lab tertentu, maka sistem akan memberikan informasi terkait tujuan dan
-tugas yang perlu dilakukan oleh mahasiswa pada lab tersebut, kemudian sistem akan menyiapkan sebuah mesin virtual baru yang nantinya akan ditampilkan kepada
-mahasiswa dalam \textit{web browser} mahasiswa. Mahasiswa memiliki keleluasaan untuk berinteraksi dengan mesin virtual layaknya mahasiswa berinteraksi dengan sebuah mesin fisik. 
-\par
+% Penulis mengusulkan sebuah solusi yang dapat mempercepat
+% dan mempermudah proses peninjauan kompetensi mahasiswa Jaringan Komputer Lanjut melalui pengembangan sistem aplikasi web yang memberikan layanan lab
+% untuk mahasiswa, yang nantinya akan dimanfaatkan sebagai saran penilaian otomatis dan menggantikan evaluasi tes tertulis yang sebelumnya digunakan pada mata kuliah Jaringan Komputer Lanjut.
+% Sistem ini akan dibangun dengan memerhatikan aspek-aspek \textit{lab based learning} pada mahasiswa untuk memastikan bahwa hasil dari evaluasi yang dilakukan dengan penggunaan
+% lab merupakan hasil yang representatif terhadap kompetensi mahasiswa pada bidang tersebut.
+% \par
 
-Setiap interaksi atau perintah yang dilakukan oleh mahasiswa pada mesin virtual akan dicatat oleh sistem untuk dievaluasi secara otomatis setelah lab selesai dilaksanakan.
-Dosen dapat mengkonfigurasikan kondisi-kondisi yang digunakan oleh sistem untuk penilaian otomatis. Kondisi-kondisi yang dapat dikonfigurasi meliputi hal-hal seperti mengecek
-apakah mahasiswa memberikan perintah tertentu dalam sesi lab tersebut, mengecek apakah koneksi antara dua \textit{node} pada jaringan virtual berhasil dibuat, dan lain-lain. 
-Sistem ini memastikan bahwa setiap mahasiswa dapat mengimplementasikan konsep-konsep yang dipelajari pada mata kuliah Jaringan Komputer pada sebuah mesin yang terhubung pada sebuah jaringan,
-dan sistem ini juga memastikan bahwa implementasi yang dilakukan oleh mahasiswa memang sesuai dengan implementasi yang diharapkan oleh dosen dengan memanfaatkan pengecekan kondisi-kondisi
-yang telah ditetapkan sebelumnya. Dalam melaksanakan suatu lab, mahasiswa akan diberikan waktu pengerjaan yang dapat dikonfigurasi oleh dosen. Waktu pengerjaan akan dihitung ketika mahasiswa
-memulai lab, dan lab akan dianggap selesai serta akan dievaluasi setelah mahasiswa menekan tombol khusus untuk menghentikan lab atau setelah waktu pengerjaan telah selesai.
-\par
+% Dalam sistem aplikasi web ini, semua mahasiswa Jaringan Komputer Lanjut akan diberikan sebuah akun yang nantinya akan digunakan untuk mengakses aplikasi web.
+% Aplikasi web akan menyediakan beberapa lab yang secara keseluruhan akan mencakup seluruh materi Jaringan Komputer. Dalam sistem ini, lab yang diberikan berbentuk
+% mesin virtual yang dapat diakses oleh mahasiswa melalui \textit{web browser}. Mesin virtual ini telah dikonfigurasikan berdasarkan kebutuhan masing-masing topik lab
+% oleh dosen melalui sebuah halaman perantara pada sistem aplikasi web, dan mesin virtual ini berada di dalam sebuah jaringan virtual sehingga mesin virtual
+% seolah-olah berada dalam sebuah jaringan fisik dengan mesin-mesin lainnya. Mahasiswa akan diberikan sebuah halaman pada aplikasi web dimana mahasiswa dapat melihat
+% dan memilih seluruh lab yang tersedia. Ketika mahasiswa memutuskan untuk melaksanakan suatu lab tertentu, maka sistem akan memberikan informasi terkait tujuan dan
+% tugas yang perlu dilakukan oleh mahasiswa pada lab tersebut, kemudian sistem akan menyiapkan sebuah mesin virtual baru yang nantinya akan ditampilkan kepada
+% mahasiswa dalam \textit{web browser} mahasiswa. Mahasiswa memiliki keleluasaan untuk berinteraksi dengan mesin virtual layaknya mahasiswa berinteraksi dengan sebuah mesin fisik. 
+% \par
+
+% Setiap interaksi atau perintah yang dilakukan oleh mahasiswa pada mesin virtual akan dicatat oleh sistem untuk dievaluasi secara otomatis setelah lab selesai dilaksanakan.
+% Dosen dapat mengkonfigurasikan kondisi-kondisi yang digunakan oleh sistem untuk penilaian otomatis. Kondisi-kondisi yang dapat dikonfigurasi meliputi hal-hal seperti mengecek
+% apakah mahasiswa memberikan perintah tertentu dalam sesi lab tersebut, mengecek apakah koneksi antara dua \textit{node} pada jaringan virtual berhasil dibuat, dan lain-lain. 
+% Sistem ini memastikan bahwa setiap mahasiswa dapat mengimplementasikan konsep-konsep yang dipelajari pada mata kuliah Jaringan Komputer pada sebuah mesin yang terhubung pada sebuah jaringan,
+% dan sistem ini juga memastikan bahwa implementasi yang dilakukan oleh mahasiswa memang sesuai dengan implementasi yang diharapkan oleh dosen dengan memanfaatkan pengecekan kondisi-kondisi
+% yang telah ditetapkan sebelumnya. Dalam melaksanakan suatu lab, mahasiswa akan diberikan waktu pengerjaan yang dapat dikonfigurasi oleh dosen. Waktu pengerjaan akan dihitung ketika mahasiswa
+% memulai lab, dan lab akan dianggap selesai serta akan dievaluasi setelah mahasiswa menekan tombol khusus untuk menghentikan lab atau setelah waktu pengerjaan telah selesai.
+% \par
 
 
 
@@ -122,44 +128,66 @@ memulai lab, dan lab akan dianggap selesai serta akan dievaluasi setelah mahasis
 \section{Permasalahan}
 \label{sec:masalah}
 %-----------------------------------------------------------------------------%
-Terdapat banyak aspek yang perlu diperhatikan dalam mengembangkan sebuah sistem yang telah disebutkan pada bagian sebelumnya. Setiap fitur yang nantinya akan dikembangkan
-memiliki pilihan solusi komponen yang beragam, sehingga perlu ada sebuah analisis terhadap komponen apa saja yang akan dipilih sebagai solusi, dan bagaimana 
-setiap komponen yang dipilih nantinya dapat berinteraksi dengan komponen-komponen lainnya sehingga sistem aplikasi web dapat berjalan dengan kohesif. 
+Terdapat banyak solusi yang dapat digunakan untuk mengimplementasikan sistem yang telah disebutkan sebelumnya. Dalam memilih sebuah solusi, diperlukan beberapa pertimbangan yang perlu dianalisis
+agar sistem yang nantinya dibuat merupakan sistem yang benar-benar dapat memberikan evaluasi yang efisien dan cepat, diantaranya hal-hal seperti bentuk dari solusi yang akan ditawarkan. Bentuk dari
+solusi akan menentukan apakah sistem yang akan dikembangkan berupa sistem aplikasi web, aplikasi komputer \textit{desktop}, aplikasi \textit{mobile}, atau sistem-sistem lainnya. 
+Setelah sistem dari solusi telah ditetapkan, perlu dipertimbangkan juga infrastruktur serta \textit{framework} dari solusi yang akan diterapkan, bagaimana setiap komponen dari sistem akan berinteraksi
+dengan perangkat yang akan digunakan sebagai sarana sistem, dan bagaimana cara membangun sebuah sistem yang dapat mengakomodir penggunaan oleh mahasiswa dalam jumlah banyak secara bersamaan. 
 \par
 
-Selain itu, sistem yang dikembangkan perlu memiliki kemampuan untuk melayani banyak pengguna dalam suatu waktu tertentu. Untuk bisa menjalankan sebuah mesin virtual,
-komputer yang berperan sebagai \textit{server} dari aplikasi web perlu mengalokasikan \textit{resource} agar mesin virtual bisa dijalankan. Apabila pengguna tidak berjumlah banyak,
-hal ini bukanlah menjadi sebuah masalah. Namun, tentunya terdapat puluhan mahasiswa yang mengikuti mata kuliah Jaringan Komputer Lanjut, dan apabila setiap mahasiswa
-mata kuliah Jaringan Komputer Lanjut ingin melaksanakan pengerjaan lab di waktu yang bersamaan, maka alokasi \textit{resource} dapat menjadi suatu masalah yang besar.
-Apabila alokasi \textit{resource} tidak dapat dilakukan secara efektif, maka sistem beresiko untuk mengalami situasi \textit{down} yang dapat mengganggu proses pengerjaan lab.
-Perlu dikembangkan sebuah solusi alokasi \textit{resource} yang efektif dan efisien, sehingga setiap mahasiswa dapat melaksanakan proses pengerjaan lab secara lancar.
+Selain bentuk dari sistem itu sendiri, perlu dipertimbangkan juga bagaimana proses evaluasi mahasiswa dengan sistem ini nantinya akan diterapkan, misalnya dengan pemanfaatan sistem \textit{lab online} 
+atau dengan pemafaatan sistem \textit{autograder}. Penentuan metodologi evaluasi mahasiswa menjadi sebuah permasalahan yang krusial, karena efektifitas dan efisiensi dari keseluruhan sistem bergantung 
+terhadap seberapa efektif metodologi evaluasi itu sendiri dalam mengevaluasi kemampuan mahasiswa secara akurat. 
 \par
 
-Di sisi lain, sebagai sebuah sistem yang ditujukan untuk menunjang pembelajaran dan pengujian kompetensi mahasiswa, perlu diperhatikan metodologi pembelajaran
-yang akan dipersembahkan oleh sistem kepada mahasiswa. Untuk memastikan bahwa sistem pengujian berbasis lab dapat memastikan bahwa mahasiswa memiliki kompetensi yang memadai,
-diperlukan adanya sebuah evaluasi terhadap sistem pengujian berbasis lab, analisis implementasi dari pengujian berbasis lab secara empiris, serta aspek-aspek lainnya
-yang perlu dipertimbangkan dalam mengimplementasikan sebuah sistem pembelajaran atau pengujian berbasis lab.  
+Setelah seluruh sistem telah berhasil dikembangkan dan diimplementasikan, tentunya harapannya sistem tersebut dapat memberikan dampak positif dalam membuat proses evaluasi mahasiswa Jaringan Komputer
+Lanjut menjadi lebih efisien dan lebih efektif. Oleh karena itu, perlu ada sebuah analisis yang dilakukan untuk menilai seberapa jauh sistem yang telah dikembangkan dapat memberikan dampak yang positif,
+sehingga diperlukan sebuah metodologi analisis yang konkrit untuk menilai dampak tersebut secara empiris dan akurat.
 \par
+% Terdapat banyak aspek yang perlu diperhatikan dalam mengembangkan sebuah sistem yang telah disebutkan pada bagian sebelumnya. Setiap fitur yang nantinya akan dikembangkan
+% memiliki pilihan solusi komponen yang beragam, sehingga perlu ada sebuah analisis terhadap komponen apa saja yang akan dipilih sebagai solusi, dan bagaimana 
+% setiap komponen yang dipilih nantinya dapat berinteraksi dengan komponen-komponen lainnya sehingga sistem aplikasi web dapat berjalan dengan kohesif. 
+% \par
+
+% Selain itu, sistem yang dikembangkan perlu memiliki kemampuan untuk melayani banyak pengguna dalam suatu waktu tertentu. Untuk bisa menjalankan sebuah mesin virtual,
+% komputer yang berperan sebagai \textit{server} dari aplikasi web perlu mengalokasikan \textit{resource} agar mesin virtual bisa dijalankan. Apabila pengguna tidak berjumlah banyak,
+% hal ini bukanlah menjadi sebuah masalah. Namun, tentunya terdapat puluhan mahasiswa yang mengikuti mata kuliah Jaringan Komputer Lanjut, dan apabila setiap mahasiswa
+% mata kuliah Jaringan Komputer Lanjut ingin melaksanakan pengerjaan lab di waktu yang bersamaan, maka alokasi \textit{resource} dapat menjadi suatu masalah yang besar.
+% Apabila alokasi \textit{resource} tidak dapat dilakukan secara efektif, maka sistem beresiko untuk mengalami situasi \textit{down} yang dapat mengganggu proses pengerjaan lab.
+% Perlu dikembangkan sebuah solusi alokasi \textit{resource} yang efektif dan efisien, sehingga setiap mahasiswa dapat melaksanakan proses pengerjaan lab secara lancar.
+% \par
+
+% Di sisi lain, sebagai sebuah sistem yang ditujukan untuk menunjang pembelajaran dan pengujian kompetensi mahasiswa, perlu diperhatikan metodologi pembelajaran
+% yang akan dipersembahkan oleh sistem kepada mahasiswa. Untuk memastikan bahwa sistem pengujian berbasis lab dapat memastikan bahwa mahasiswa memiliki kompetensi yang memadai,
+% diperlukan adanya sebuah evaluasi terhadap sistem pengujian berbasis lab, analisis implementasi dari pengujian berbasis lab secara empiris, serta aspek-aspek lainnya
+% yang perlu dipertimbangkan dalam mengimplementasikan sebuah sistem pembelajaran atau pengujian berbasis lab.  
+% \par
 %-----------------------------------------------------------------------------%
 \subsection{Definisi Permasalahan}
 \label{sec:definisiMasalah}
 %-----------------------------------------------------------------------------%
 Berdasarkan penjelasan pada bagian permasalahan, maka dapat didefinisikan rumusan permasalahan dari proyek ini sebagai berikut:
 \begin{itemize}
-	\item Bagaimana cara mengimplementasi virtual lab sebagai sistem evaluasi otomatis?
-	\item Bagaimana cara mengoptimasi sistem dalam pembagian, penggunaan, dan alokasi resource yang terbatas?
-	\item Bagaimana implementasi sistem lab agar pembelajaran dan pengujian kompetensi mahasiswa dapat dilaksanakan secara efektif?
+	\item Bagaimana merancang sebuah sistem yang dapat mengotomasikan proses evaluasi mahasiswa Jaringan Komputer Lanjut?
+	\item Apa metodologi pembelajaran yang optimal yang dapat diterapkan kedalam sistem evaluasi yang akan dikembangkan nantinya?
+	\item Seberapa besar dampak dari sistem yang telah dikembangkan terhadap efisiensi dan efektivitas proses evaluasi kompetensi mahasiswa Jaringan Komputer Lanjut?
+	% \item Bagaimana cara mengimplementasi virtual lab sebagai sistem evaluasi otomatis?
+	% \item Bagaimana cara mengoptimasi sistem dalam pembagian, penggunaan, dan alokasi resource yang terbatas?
+	% \item Bagaimana implementasi sistem lab agar pembelajaran dan pengujian kompetensi mahasiswa dapat dilaksanakan secara efektif?
 \end{itemize}
 -----------------------------------------------------------------------------%
 \subsection{Batasan Permasalahan}
 \label{sec:batasanMasalah}
 %-----------------------------------------------------------------------------%
-Dalam penelitian serta pengembangan aplikasi dari proyek ini, terdapat beberapa asumsi dan batasan permasalahan yang perlu didefinisikan, yaitu:
+Dalam penelitian serta pengembangan sistem dari proyek ini, terdapat beberapa asumsi dan batasan permasalahan yang perlu didefinisikan, yaitu:
 \begin{itemize}
-	\item Sistem aplikasi web hanya akan digunakan dan dimanfaatkan oleh mahasiswa dan dosen Jaringan Komputer Lanjut sebagai sarana evaluasi.
-	\item Pengembangan proyek, termasuk implementasi \textit{backend} dan \textit{frontend}, dilaksanakan secara efektif dalam rentang waktu 5 bulan antara bulan Februari 2024 hingga Juni 2024.
-	\item Implementasi dari sebuah sistem evaluasi untuk mahasiswa Jaringan Komputer Lanjut berdasarkan konsep lab untuk mesin virtual yang dapat diakses oleh mahasiswa.
-	\item Proyek tidak mengembangkan sistem jaringan virtual ataupun sistem mesin virtual dari awal, melainkan mengimplementasi dan mengintegrasikan layanan-layanan yang menyediakan jaringan virtual dan mesin virtual kedalam suatu aplikasi web.
+	\item Sistem hanya akan digunakan dan dimanfaatkan oleh mahasiswa serta dosen Jaringan Komputer Lanjut sebagai saran evaluasi kompetensi.
+	\item Pengembangan sistem dilaksanakan dalam rentang waktu 4 bulan, yaitu antara bulan Februari 2024 hingga Mei 2024.
+	\item Sistem akan memanfaatkan sarana dan prasarana yang telah disediakan oleh Fakultas Ilmu Komputer serta Universitas Indonesia.
+	% \item Sistem aplikasi web hanya akan digunakan dan dimanfaatkan oleh mahasiswa dan dosen Jaringan Komputer Lanjut sebagai sarana evaluasi.
+	% \item Pengembangan proyek, termasuk implementasi \textit{backend} dan \textit{frontend}, dilaksanakan secara efektif dalam rentang waktu 5 bulan antara bulan Februari 2024 hingga Juni 2024.
+	% \item Implementasi dari sebuah sistem evaluasi untuk mahasiswa Jaringan Komputer Lanjut berdasarkan konsep lab untuk mesin virtual yang dapat diakses oleh mahasiswa.
+	% \item Proyek tidak mengembangkan sistem jaringan virtual ataupun sistem mesin virtual dari awal, melainkan mengimplementasi dan mengintegrasikan layanan-layanan yang menyediakan jaringan virtual dan mesin virtual kedalam suatu aplikasi web.
 \end{itemize}
 
 %-----------------------------------------------------------------------------%
@@ -168,8 +196,8 @@ Dalam penelitian serta pengembangan aplikasi dari proyek ini, terdapat beberapa 
 %-----------------------------------------------------------------------------%
 Berikut ini adalah tujuan penelitian yang dilakukan:
 \begin{itemize}
-	\item Mengembangkan sistem aplikasi web yang menyediakan layanan dalam bentuk lab virtual.
-	\item Memudahkan proses evaluasi kompetensi mahasiswa Jaringan Komputer Lanjut.
+	\item Mengembangkan sebuah sistem untuk evaluasi mahasiswa Jaringan Komputer Lanjut.
+	\item Meningkatkan efektivitas dan efisiensi dari keseluruhan proses evaluasi mahasiswa Jaringan Komputer Lanjut.
 \end{itemize}
 
 

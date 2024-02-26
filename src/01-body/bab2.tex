@@ -2,16 +2,80 @@
 \chapter{\babDua}
 \label{bab:2}
 %-----------------------------------------------------------------------------%
-Untuk memulai penelitian, dibutuhkan kerangka berpikir yang sesuai untuk permasalahan yang ingin dipecahkan.
-Untuk membentuk kerangka berpikir yang sesuai, perlu dikaitkan dengan hasil studi literatur yang telah dilakukan.
-Oleh karena itu, pada bab ini, akan dijelaskan hasil studi literatur yang telah dilakukan yang telah dikaitan dengan kerangka kerja untuk penelitian ini.
+Terdapat banyak solusi yang dapat digunakan untuk mengimplementasikan sebuah sistem yang telah dipaparkan sebelumnya. Untuk bentuk sistem sendiri,
+sistem yang akan dikembangkan nantinya akan berbentuk sebuah aplikasi web. Bentuk aplikasi web dipilih sebagai solusi karena sebuah aplikasi web dapat 
+memberikan aspek efisiensi yang diinginkan, dimana sebuah aplikasi web dapat diakses oleh mahasiswa dimana saja dan kapan saja, sehingga proses
+evaluasi juga dapat dilaksanakan tanpa memandang waktu ataupun tempat. Selain itu, sebuah sistem aplikasi web memungkinkan proses evaluasi untuk
+di \textit{update} dan diobservasi oleh dosen secara \textit{realtime} dari mana saja. Hal ini mempermudah proses evaluasi bagi dosen dan mahasiswa, 
+serta mempercepat proses pengecekan atau verifikasi yang dilakukan oleh dosen terhadap evaluasi kompetensi mahasiswa.
+\par
 
+Beranjak dari bentuk sistem tersebut, sistem yang nantinya akan dikembangkan merupakan sebuah aplikasi web yang memberikan layanan lab yang dapat 
+diakses dan dikerjakan oleh mahasiswa, dimana lab ini nantinya akan memanfaatkan sistem penilaian otomatis untuk menilai kompetensi mahasiswa dalam 
+pelaksanaan setiap lab yang diberikan. Sistem akan dibangun berdasarkan aspek-aspek \textit{virtual lab based learning}. Proses pengerjaan lab yang 
+dinilai secara otomatis oleh sistem ini nantinya akan menggantikan proses evaluasi kompetensi manual yang saat ini digunakan dalam mata kuliah Jaringan Komputer Lanjut.
+\par
 
+Dalam sistem aplikasi web ini, semua mahasiswa Jaringan Komputer Lanjut akan diberikan sebuah akun yang nantinya akan digunakan untuk mengakses aplikasi web.
+Aplikasi web akan menyediakan beberapa lab yang secara keseluruhan akan mencakup seluruh materi Jaringan Komputer. Dalam sistem ini, lab yang diberikan berbentuk
+mesin virtual yang dapat diakses oleh mahasiswa melalui \textit{web browser}. Mesin virtual ini telah dikonfigurasikan berdasarkan kebutuhan masing-masing topik lab
+oleh dosen melalui sebuah halaman perantara pada sistem aplikasi web, dan mesin virtual ini berada di dalam sebuah jaringan virtual sehingga mesin virtual
+seolah-olah berada dalam sebuah jaringan fisik dengan mesin-mesin virtual lainnya. Mahasiswa akan diberikan sebuah halaman pada aplikasi web dimana mahasiswa dapat melihat
+dan memilih seluruh lab yang tersedia. Ketika mahasiswa memutuskan untuk melaksanakan suatu lab tertentu, maka sistem akan memberikan informasi terkait tujuan dan
+tugas yang perlu dilakukan oleh mahasiswa pada lab tersebut, kemudian sistem akan menyiapkan sebuah mesin virtual baru yang nantinya akan ditampilkan kepada
+mahasiswa dalam \textit{web browser} mahasiswa. Mahasiswa memiliki keleluasaan untuk berinteraksi dengan mesin virtual layaknya mahasiswa berinteraksi dengan sebuah mesin fisik. 
+\par
+
+Setiap interaksi atau perintah yang dilakukan oleh mahasiswa pada mesin virtual akan dicatat oleh sistem untuk dievaluasi secara otomatis setelah lab selesai dilaksanakan.
+Dosen dapat mengkonfigurasikan kondisi-kondisi yang digunakan oleh sistem untuk penilaian otomatis. Kondisi-kondisi yang dapat dikonfigurasi meliputi hal-hal seperti mengecek
+apakah mahasiswa memberikan perintah tertentu dalam sesi lab tersebut, mengecek apakah koneksi antara dua \textit{node} pada jaringan virtual berhasil dibuat, dan lain-lain. 
+Sistem ini memastikan bahwa setiap mahasiswa dapat mengimplementasikan konsep-konsep yang dipelajari pada mata kuliah Jaringan Komputer pada sebuah mesin yang terhubung pada sebuah jaringan,
+dan sistem ini juga memastikan bahwa implementasi yang dilakukan oleh mahasiswa memang sesuai dengan implementasi yang diharapkan oleh dosen dengan memanfaatkan pengecekan kondisi-kondisi
+yang telah ditetapkan sebelumnya. Dalam melaksanakan suatu lab, mahasiswa akan diberikan waktu pengerjaan yang dapat dikonfigurasi oleh dosen. Waktu pengerjaan akan dihitung ketika mahasiswa
+memulai lab, dan lab akan dianggap selesai serta akan dievaluasi setelah mahasiswa menekan tombol khusus untuk menghentikan lab atau setelah waktu pengerjaan telah selesai.
+\par
+
+Untuk mengimplementasikan sistem tersebut, terdapat beberapa konsep dan teknologi yang akan digunakan sebagai fondasi dari sistem, diantaranya \textit{Network Virtualization},
+\textit{Virtual Lab Based Learning}, dan lain-lain.
 %-----------------------------------------------------------------------------%
-\section{Apa itu \latex?}
+\section{Network Virtualization dan Virtual Network}
 \label{sec:latex}
 %-----------------------------------------------------------------------------%
+Untuk memahami apa itu \textit{Network Virtualization}, kita perlu memahami konsep \textit{virtualization}.
+\textit{Virtualization} secara prinsip meliputi penggunaan sebuah \textit{software layer} yang mengenkapsulasi sebuah sistem operasi, sehingga
+\textit{software layer} tersebut dapat memberikan input, output, dan \textit{behavior} yang identik dengan apa yang diharapkan dari sebuah perangkat fisik.
+\footnote{Michael Pearce, Sherali Zeadally, and Ray Hunt, “Virtualization,” ACM Computing Surveys 45, no. 2 (February 2013): 1–39, https://doi.org/10.1145/2431211.2431216.}
+\textit{Virtualization} memberikan sebuah abstraksi antara pengguna dan sumber daya fisik, sehingga pengguna seolah-olah dapat berinteraksi secara langsung dengan
+sumber daya fisik tersebut tanpa adanya hubungan atau koneksi langsung antara pengguna dan sumber daya fisik.
+\footnote{Carapinha, Jorge, and Javier Jiménez. “Network Virtualization: A View from the Bottom.” Proceedings of the 1st ACM workshop on Virtualized infrastructure systems and architectures (2009). https://doi.org/10.1145/1592648.1592660. }
+Berangkat dari pemahaman konsep \textit{virtualization} tersebut, Network Virtualization merupakan sebuah teknologi yang memungkinkan pengoperasian dari 
+banyak \textit{logical network} dalam satu perangkat fisik.
+\footnote{Tutschku, Kurt, Thomas Zinner, Akihiro Nakao, and Phuoc Tran-Gia. "Network virtualization: Implementation steps towards the future internet." Electronic Communications of the EASST 17 (2009).}
+Dengan memungkinkan adanya banyak arsitektur jaringan komputer yang bersifat heterogen dalam satu perangkat fisik, Network Virtualization memberikan flexibilitas, mempromosikan keragaman, menjamin keamanan, 
+dan meningkatkan pengelolaan.
+\footnote{N.M.M.K. Chowdhury and R. Boutaba, “Network Virtualization: State of the Art and Research Challenges,” IEEE Communications Magazine 47, no. 7 (July 2009): 20–26, https://doi.org/10.1109/mcom.2009.5183468.}
+\par
 
+Implementasi dari konsep atau teknologi Network Virtualization dilakukan dengan memanfaatkan Mininet. Mininet adalah sebuah \textit{network emulator} yang 
+dapat mengemulasikan sebuah jaringan virtual yang terdiri dari \textit{virtual hosts, switches, controllers,} dan \textit{links}. 
+\footnote{Mininet Project Contributors, “Mininet Overview,” Mininet, accessed February 9, 2024, https://mininet.org/overview/.}
+Mininet dipilih sebagai solusi dari \textit{emulator} jaringan virtual karena Mininet menyediakan sebuah API untuk Python yang dapat digunakan
+sebagai dasar dari \textit{backend} sistem web yang akan dikembangkan. 
+\footnote{\textit{Ibid.}}
+Dengan Mininet, pembuatan sebuah jaringan virtual dapat dilaksanakan melalui \textit{command} yang telah disediakan oleh Mininet, dan interaksi dengan \textit{node} 
+pada jaringan virtual tersebut dapat dilakukan dengan memanfaatkan API untuk Python.
+\footnote{\textit{Ibid.}}
+\par
+
+Virtual Network itu sendiri secara umum merupakan sebuah teknologi atau konsep yang menghubungkan mesin dan/atau perangkat virtual 
+menggunakan perangkat lunak. 
+\footnote{What is virtual networking?, accessed February 9, 2024, https://www.vmware.com/topics/glossary/content/virtual-networking.html.} 
+Virtual Network memungkinkan mesin virtual untuk berkomunikasi dengan jaringan, \textit{host machine}, dan mesin virtual 
+lainnya tanpa adanya perangkat keras sebagai penghubung mesin-mesin tersebut layaknya dalam sebuah jaringan komputer tradisional. 
+\footnote{Thomas Olzak, Jason Boomer, Robert M. Keefer, James Sabovik. "Managing Hyper-V" Microsoft Virtualization (2010): 39-60. https://doi.org/10.1016/B978-1-59749-431-1.00004-7} 
+Virtual Network merupakan dasar dari sistem yang akan dikembangkan nantinya serta merupakan tujuan akhir dari pengimplementasian teknologi \textit{Network Virtualization},
+dimana setiap lab akan berada dalam sebuah lingkungan berupa Virtual Network, sehingga setiap \textit{instance} dari lab bersifat unik dan terisolasi satu sama lain.
+\par
 %-----------------------------------------------------------------------------%
 \subsection{\latex~Secara Singkat}
 \label{sec:latexBrief}
