@@ -48,6 +48,7 @@ Untuk memahami apa itu \textit{Network Virtualization}, kita perlu memahami kons
 \textit{Virtualization} memberikan sebuah abstraksi antara pengguna dan sumber daya fisik, sehingga pengguna seolah-olah dapat berinteraksi secara langsung dengan
 sumber daya fisik tersebut tanpa adanya hubungan atau koneksi langsung antara pengguna dan sumber daya fisik.
 \footnote{Carapinha, Jorge, and Javier Jiménez. “Network Virtualization: A View from the Bottom.” Proceedings of the 1st ACM workshop on Virtualized infrastructure systems and architectures (2009). https://doi.org/10.1145/1592648.1592660. }
+% \citep{journal:nv_view_from_the_bottom}
 Berangkat dari pemahaman konsep \textit{virtualization} tersebut, Network Virtualization merupakan sebuah teknologi yang memungkinkan pengoperasian dari 
 banyak \textit{logical network} dalam satu perangkat fisik.
 \footnote{Tutschku, Kurt, Thomas Zinner, Akihiro Nakao, and Phuoc Tran-Gia. "Network virtualization: Implementation steps towards the future internet." Electronic Communications of the EASST 17 (2009).}
@@ -80,36 +81,32 @@ dimana setiap lab akan berada dalam sebuah lingkungan berupa Virtual Network, se
 \subsection{Virtual Lab Based Learning}
 \label{sec:latexBrief}
 %-----------------------------------------------------------------------------%
-Berdasarkan \cite{latex:intro}: \\
-\begin{tabular}{| p{13cm} |}
-	\hline
-	\\
-	LaTeX is a family of programs designed to produce publication-quality typeset documents.
-	It is particularly strong when working with mathematical symbols. \\
-	The history of LaTeX begins with a program called TEX.
-	In 1978, a computer scientist by the name of Donald Knuth grew frustrated with the mistakes that his publishers made in typesetting his work.
-	He decided to create a typesetting program that everyone could easily use to typeset documents, particularly those that include formulae, and made it freely available.
-	The result is TEX. \\
-	Knuth's product is an immensely powerful program, but one that does focus very much on small details.
-	A mathematician and computer scientist by the name of Leslie Lamport wrote a variant of TEX called \LaTeX that focuses on document structure rather than such details. \\
-	\\
-	\hline
-\end{tabular}
+Lab yang bersifat \textit{hands on} dimana mahasiswa dapat berinteraksi dan menerapkan secara langsung ilmu yang mereka dapatkan merupakan suatu hal
+yang penting untuk dilakukan.
+\footnote{Le Xu, Dijiang Huang, and Wei-Tek Tsai, “V-Lab: A Cloud-Based Virtual Laboratory Platform for Hands-On Networking Courses,” Proceedings of the 17th ACM Annual Conference on Innovation and Technology in Computer Science Education, July 3, 2012, https://doi.org/10.1145/2325296.2325357.}
+Sebuah lingkungan lab yang bagus perlu bersifat fleksibel dan dapat dikonfigurasi untuk mensimulasikan berbagai macam tipe dan konfigurasi jaringan komputer
+untuk bisa diexperimentasikan. 
+\footnote{\textit{Ibid.}}
+Namun, cukup sulit bagi sebuah organisasi untuk dapat terus termutakhir terhadap perkembangan teknologi yang kompleks.
+\footnote{\textit{Ibid.}}
+\par
 
-\vspace*{0.8cm}
-
-Dokumen \LaTeX~sangat mudah, seperti halnya membuat dokumen teks biasa.
-Ada beberapa perintah yang diawali dengan tanda '\bslash'.
-Seperti perintah \code{\bslash\bslash}~yang digunakan untuk memberi baris baru.
-Perintah tersebut juga sama dengan perintah \code{\bslash{}newline}.
-Pada bagian ini akan sedikit dijelaskan cara manipulasi teks dan perintah-perintah \latex~yang mungkin akan sering digunakan.
-Jika ingin belajar hal-hal dasar mengenai \latex, silakan kunjungi:
-
+Terdapat lima tipe lab yang bersifat \textit{hands on} yang diterapkan dalam berbagai kampus di dunia.
 \begin{itemize}
-	\item \url{http://frodo.elon.edu/tutorial/tutorial/}, atau
-	\item \url{http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/}
+	\item \textit{Physical Lab}, yaitu lab yang dibuat dengan menggunakan perlengkapan fisik seperti \textit{router, switch,} dan lain-lain. Sistem lab ini dapat mensimulasikan permasalahan-permasalahan yang dihadapi dalam dunia nyata,
+	tetapi disaat bersamaan lab yang berbentuk fisik lebih sulit untuk dikonfigurasi dan di-rekonfigurasi ketika terjadi perubahan \textit{requirement}. Selain itu, diperlukan juga staf yang bisa mengelola sistem tersebut, dan mahasiswa
+	juga perlu mengikuti jadwal yang dibuat oleh tim pengajar.
+	\item \textit{Virtual Application Laboratory}, yaitu lab yang memberikan akses gratis terhadap perangkat lunak berbayar yang tergolong mahal untuk mahasiswa melalui koneksi internet. Bentuk \textit{virtualization} ini terbatas terhadap
+	\textit{application layer} sehingga sistem ini tidak bisa memberikan simulasi untuk pengoperasian level sistem operasi. Selain itu, sistem ini bersifat \textit{stateless}, sehingga progres akan hilang apabila sesi telah berakhir.
+	\item \textit{Shared-Host Lab}, yaitu \textit{virtualization} dimana mahasiswa akan menggunakan perangkat lunak seperti RDP atau VNC untuk melakukan login kepada sistem lab. Oleh karena itu, \textit{host} dapat digunakan secara bersamaan 
+	oleh lebih dari satu mahasiswa. Tentunya sistem ini tidak cocok untuk mengevaluasi kompetensi mahasiswa, karena sistem ini tidak bisa membedakan perintah mana yang dilakukan oleh mahasiswa tertentu.
+	\item \textit{Single-VM Lab}, yaitu sistem dimana masing-masing pengguna akan mendapatkan satu \textit{virtual machine} yang berdasarkan sebuah \textit{template virtual machine}. Lab ini bersifat \textit{reservation based} dan \textit{stateless}.
+	Namun, sistem ini tidak bisa dikonfigurasikan berdasarkan \textit{user requirement}, sehingga sistem ini menjadi sulit untuk diimplementasikan dalam kondisi dimana kurikulum lab sering berganti.
+	\item \textit{Multi-VM \& Virtual Network Lab}, yaitu sistem yang memberikan \textit{virtualization} dengan lebih dari satu \textit{virtual machine} dan \textit{virtual network} yang didasarkan pada kebutuhan \textit{user}.
+	\footnote{\textit{Ibid.}}
+	Sistem aplikasi web yang akan dikembangkan bersifat mirip dengan sistem \textit{Multi-VM \& Virtual Network Lab}, dimana Mininet akan digunakan untuk sistem \textit{virtual network} yang bisa memiliki lebih dari satu \textit{host} yang berperan sebagai
+	\textit{virtual machine} dalam \textit{virtual network} tersebut.  
 \end{itemize}
-
 %-----------------------------------------------------------------------------%
 \subsection{\latex~Kompiler dan IDE}
 \label{sec:latexCompiler}
